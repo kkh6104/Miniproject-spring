@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.minip.Ddingflix.model.mapper.UserMapper">
+  
+  <select id="identify" resultType="UserDTO">
+  	SELECT * FROM APP_USER WHERE USER_ID = #{userId} AND USER_PWD = #{userPwd}
+  </select>
+  
+  <insert id="join" parameterType="UserDTO">
+  	INSERT INTO APP_USER (USER_ID, USER_PWD, USER_NAME, USER_AGE, USER_BALANCE) VALUES(#{userId},#{userPwd},#{userName},#{userAge},#{userBalance})
+  </insert>
+  
+  <select id="searchById" resultType="UserDTO">
+  	SELECT * FROM APP_USER WHERE USER_ID = #{userId}
+  </select>
+  
+  <update id="update" parameterType="UserDTO">
+  	UPDATE APP_USER SET USER_NAME = #{userName}, USER_AGE = #{userAge} WHERE USER_ID = #{userId}
+  </update>
+  
+  <delete id="delete">
+  	DELETE FROM APP_USER WHERE USER_ID = #{userId} AND USER_PWD = #{userPwd}
+  </delete>
+  
+</mapper>

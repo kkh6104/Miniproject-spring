@@ -1,0 +1,188 @@
+
+/* 외부 폰트 불러오기 */
+@font-face {
+    font-family: 'GyeonggiMillenniumBackground';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2410-3@1.0/Batang_Regular.woff') format('woff');
+    font-weight: 400;
+    font-display: swap;
+}
+
+/* 공통 부분 적용 시키기 */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+     font-family: 'GyeonggiMillenniumBackground';
+}
+
+ul, ol, li { list-style: none;}
+
+a { text-decoration: none;
+    color: inherit; 
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+	color: white;
+	font-size: 18px;
+    background-color: #1d2228;
+}
+
+.page-form{
+	min-height: 300px;
+}
+
+/* 
+    헤더 부분  : 이미지도 인라인 속성이라 text-align: center로 정렬할 수 있다.
+*/
+header{ 
+    text-align: center;
+}
+
+header a{
+    color: rgb(105,0,0);
+}
+
+/*
+    nav 부분 : 구조가 복잡하니 여기저기서 flex를 써야했고 align-items: center를 적용하기 위해 height를 설정해줘야하기도 했다.
+                드랍 박스는 평소엔 display:none으로 안보이다가 에 마우스 hover시 display:flex 식으로 보이도록 해줬고,
+                <a>태그를 일괄 마우스 hover시 bold하게 바꿔줌.
+*/
+nav{
+    background-color: rgb(105,0,0);
+    color: white;
+    height: 30px;
+}
+
+nav ul{
+    display: flex;
+    height: 100%;
+    align-items: center;
+    text-align: center;
+    justify-content: space-around;
+}
+nav ul li{
+    display: flex;
+    flex-direction: column;
+    
+    position: relative;
+    flex: 1;
+}
+nav ul li:hover .submenu{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    border-radius: 12px;
+}
+nav .submenu {
+    display: none;
+
+    position: absolute;
+    top: 100%;
+    left: 25%;
+    
+    width: 50%;
+    height: 160px;
+    padding: 20px;
+
+    background-color: brown;
+    color: white;
+}
+nav ul li a:hover{
+    font-weight: 700;
+}
+
+.button{
+	font-size: 20px;
+}
+.page{
+	min-height: 900px;
+}
+
+/*
+    main 부분 컨텐츠를 보여주는 section 부분과 로그인과 배너가 있는 aside부분으로 나눔
+*/
+main {
+    display: flex;
+}
+main section{
+    flex: 8;
+
+}
+main section h2{
+    color: white;
+    text-align: center;
+    background-color: brown;
+    margin-top: 5px;
+    
+}
+main aside{
+    flex: 2;
+}
+.subject{
+    display: flex;
+    justify-content: space-around;
+}
+.title{
+	color: white;
+	text-align: center;
+}
+aside{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.btn{
+    width: 50px;
+    height:50px;
+    border-radius: 50%;
+}
+.login{
+    display: flex;
+    padding: 20px 40PX 10px 40px;
+    flex-direction: column;
+
+}
+.login-box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #2B3036;
+}
+.login input{
+    min-width: 150px;
+    min-height: 40px;
+    color : rgb(105,0,0);
+}
+.login-links{
+    display: flex;
+    justify-content: space-around;
+    color: red;
+    font-size: 12px;
+     padding: 0 0 20px 0;
+    width: 200px;
+}
+.id{
+    border-radius: 0 0 25% 0;
+}
+.password{
+    border-radius: 0 25% 0 0;
+}
+.banner>a{
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+}
+/* footer : &code; 써본거 외엔 크게 이렇다할건 없음 */
+
+footer{
+    border-top: 25px solid rgb(105,0,0);
+    color: white;
+    font-size: 18px;
+    padding: 10px;
+}
